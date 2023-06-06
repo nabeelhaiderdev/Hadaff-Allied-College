@@ -49,13 +49,13 @@ $hdfall_pagetitle = glide_page_title('step_spbop_title');
 
 <section id="page-section" class="page-section">
 	<!-- Content Start -->
-
+<div class="container">
 	<?php while ( have_posts() ) { the_post();
 		//Include specific template for the content.
 		get_template_part( 'partials/content', 'page' );
 
 	} ?>
-
+</div>
 	<div class="clear"></div>
 	<div class="ts-80"></div>
 

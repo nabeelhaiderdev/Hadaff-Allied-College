@@ -2312,3 +2312,104 @@ button, hr, input {
   .footer-copyrights p {
 	margin: 0;
   }
+
+
+
+  
+  .wp-block-table {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0 -15px;
+  }
+  .wp-block-table .table-column {
+	width: 100%;
+	padding: 0 15px;
+	margin: 0 0 50px;
+  }
+  @media (max-width: 767px) {
+	.wp-block-table .table-column {
+	  margin: 0 0 20px;
+	}
+  }
+  
+  @media (max-width: 767px) {
+	.table-scroller {
+	  overflow: auto;
+	  width: 100%;
+	  padding-bottom: 15px;
+	}
+  }
+  
+  table {
+	width: 100%;
+	border: 0;
+	border-collapse: collapse;
+  }
+  @media (min-width: 1200px) {
+	table {
+	  font-size: 18px;
+	}
+  }
+  @media (max-width: 767px) {
+	table {
+	  min-width: 500px;
+	  font-size: 13px;
+	}
+  }
+  table th {
+	color: #fff;
+	background: #2d2a6f;
+	text-align: left;
+	padding: 8px 10px;
+	font-weight: 600;
+  }
+  @media (min-width: 768px) {
+	table th {
+	  font-size: 16px;
+	  padding: 10px 15px;
+	}
+  }
+  @media (min-width: 1024px) {
+	table th {
+	  font-size: 19px;
+	}
+  }
+  @media (min-width: 1200px) {
+	table th {
+	  font-size: 22px;
+	}
+  }
+  table th.year {
+	width: 20%;
+  }
+  @media (max-width: 767px) {
+	table th.year {
+	  width: auto;
+	  min-width: 80px;
+	}
+  }
+  table th.code {
+	min-width: 85px;
+	width: 20%;
+  }
+  table th.hours {
+	min-width: 68px;
+	text-align: center;
+	width: 10%;
+  }
+  table td {
+	padding: 8px 10px;
+	font-weight: 400;
+  }
+  @media (min-width: 768px) {
+	table td {
+	  padding: 8px 15px;
+	}
+  }
+  table td:last-child {
+	text-align: center;
+  }
+  table tbody tr:nth-child(even) {
+	background: #e8edf1;
+  }
+  

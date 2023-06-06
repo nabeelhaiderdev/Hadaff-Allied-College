@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_647ecff6bf8ce",
-            "label": "<h2 style=\"text-align:center\">Logo<\/h2>",
+            "label": "<h2 style=\"text-align:center\">Logos<\/h2>",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -19,6 +19,24 @@
             "message": "",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_647efdb845494",
+            "label": "Expand for options",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
         },
         {
             "key": "field_647ed045bf8cf",
@@ -89,5 +107,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686033463
+    "modified": 1686044137
 }
