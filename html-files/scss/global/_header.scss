@@ -1,47 +1,67 @@
 /* Header Styles */
 .header {
     width: 100%;
-    position: relative;
+    position: absolute;
     z-index: 9;
-    font-size: 16px;
-    background: $white;
-    padding: 26px 0; 
-    font-weight: 500;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-
-    @media (max-width: $desktop) {
-        font-size: 16px;
-        padding: 15px 0;
-    }
+    padding: 16px 0;
+    background: rgba(45, 42, 111, 0.5);
 
     @media (max-width: $tablet) {
-        font-size: 14px;
+        padding: 10px 0;
     }
 
     .container {
         display: flex;
         align-items: center;
-        max-width: 1215px;
+
+        @media (max-width: $desktop) {
+            justify-content: space-between;
+        }
+    }
+    
+    .btn {
+        margin-right: 50px;
+        
+        @media (min-width: $tablet + 1) {
+            margin-right: 55px;
+        }
+
+        @media (min-width: $desktop + 1) {
+            padding: 10px 25px;
+            min-width: 167px;
+            margin: 0;
+        }
+
+        @media (max-width: $tablet) {
+            font-size: 13px;
+        }
+
+        @media (max-width: 359px) {
+            font-size: 12px;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
     }
 }
 
 .logo {
-    width: 159px;
-    min-width: 159px;
+    width: 174px;
+    min-width: 174px;
     display: block;
 
-    @media (max-width: $widescreen) {
-        width: 130px;
-        min-width: 130px;
+    @media (max-width: $desktop) {
+        width: 150px;
+        min-width: 150px;
+    }
+
+    @media (max-width: $tablet) {
+        width: 120px;
+        min-width: 120px;
     }
 
     a {
         display: block;
         outline: none;
-
-        @media (max-width: $widescreen) {
-            margin: 0;
-        }
 
         img {
             display: block;
@@ -62,10 +82,9 @@
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    transition-property: right !important;
     background: $primary;
     border-radius: 4px;
-    transition: transform 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out;
 
     @media (min-width: $desktop + 1) {
         display: none !important;
@@ -125,15 +144,21 @@
     flex-grow: 1;
     flex-basis: 0;
     min-width: 0;
+    padding: 0 25px 0 75px;
+    position: relative;
+    display: flex;
+    justify-content: center;
 
     @media (max-width: $desktop) {
+        display: block;
+        padding: 0;
         position: fixed;
         right: 0;
         top: 0;
         bottom: 0;
         overflow: auto;
         width: 290px;
-        background: $blue-darker;
+        background: $blue-light;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
     }
@@ -150,30 +175,24 @@
 }
 
 .header-navigation {
-    width: 100%;
-    position: relative;
-    padding: 0 0 0 9.4%;
-
-    @media (max-width: $widescreen-x) {
-        padding-left: 4%;
-    }
-
-    @media (max-width: $widescreen) {
-        padding: 0 0 0 25px;
-    }
-
     @media (max-width: $desktop) {
-        padding: 25px;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        padding: 30px 25px;
     }
 }
 
 .navigation {
     list-style: none;
     padding: 0;
+    margin: 0 -27px 0 -26px;
+    text-transform: uppercase;
+    justify-content: space-between;
     display: flex;
     align-items: center;
-    margin: 0 -20px;
-    justify-content: flex-end;
+    font-size: 16px;
+    font-weight: 300;
 
     @media (max-width: $widescreen) {
         margin: 0 -15px;
@@ -181,16 +200,15 @@
 
     @media (max-width: $desktop) {
         flex-flow: row wrap;
-        margin: 0;
-        font-weight: 700;
+        margin: 0 0 20px;
+        font-weight: 500;
+        order: 1;
+        width: 100%;
     }
 
-    li {
-        margin: 0 28px 0 27px;
+    > li {
+        margin: 0 27px 0 26px;
         position: relative;
-        display: flex;
-        align-items: center;
-        color: $blue-darker;
 
         @media (max-width: $widescreen) {
             margin: 0 15px;
@@ -199,42 +217,35 @@
         @media (max-width: $desktop) {
             width: 100%;
             margin: 0;
-            display: block;
-            color: $white;
         }
 
         .drop-opener {
-            @media (min-width: $desktop + 1) {
-                font-size: 13px;
-                margin-left: 5px;
-            }
-
-            @media (max-width: $desktop) {
-                position: absolute;
-                right: 0;
-                top: 0;
-                width: 50px;
-                height: 46px;
-                display: none;
-                cursor: pointer;
-                align-items: center;
-                justify-content: flex-end;
-            }
+            position: absolute;
+            right: -15px;
+            top: 0;
+            width: 50px;
+            height: 46px;
+            color: $white;
+            display: none;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
 
             &:before {
                 transition: all 0.3s ease-in-out;
             }
+
+            &:hover {
+                color: $secondary;
+            }
         }
 
-        a {
-            color: $blue-darker;
+        > a {
             display: block;
-            padding: 10px 0;
-            text-decoration: none;
-            transition: all 0.3s ease-in-out;
+            color: $white;
+            padding: 12px 0;
 
             @media (max-width: $desktop) {
-                color: $white;
             }
 
             &:hover {
@@ -242,11 +253,6 @@
             }
         }
 
-        &:hover {
-            color: $tertiary;
-        }
-
-        &:hover,
         &.active {
             > a {
                 color: $tertiary;
@@ -258,7 +264,6 @@
                 @media (min-width: $desktop + 1) {
                     opacity: 1;
                     visibility: visible;
-                    display: block !important;
                     margin-top: 0;
                 }
             }
@@ -273,25 +278,20 @@
 
             &.drop-active {
                 > a {
-                    @media (max-width: $desktop) {
-                        color: $tertiary;
-                    }
+                    color: $secondary;
                 }
-                
+
                 .drop-opener {
+                    color: $secondary;
+                    
                     &:before {
                         transform: rotate(180deg);
-
-                        @media (max-width: $desktop) {
-                            color: $tertiary;
-                        }
                     }
                 }
             }
         }
     }
 }
-
 
 .nav-dropdown {
     width: 100%;
@@ -300,12 +300,12 @@
     overflow: hidden;
 
     @media (min-width: $desktop + 1) {
-        width: 220px;
+        width: 190px;
         border-radius: 5px;
         background: $white;
         box-shadow: 0 7px 15px rgba(0,0,0,0.25);
         position: absolute;
-        left: 0;
+        left: -15px;
         top: 100%;
         transition: all 0.3s ease-in-out;
         opacity: 0;
@@ -317,6 +317,7 @@
         list-style: none;
         padding: 10px 0;
         margin: 0;
+        font-size: 14px;
 
         @media (max-width: $desktop) {
             padding: 5px 0;
@@ -326,148 +327,29 @@
         li {
             margin: 0;
             padding: 0;
-            display: block;
 
             a {
                 display: block;
-                padding: 7px 15px;
+                padding: 10px 15px;
 
                 @media (max-width: $desktop) {
                     padding: 7px 15px;
                     border-radius: 5px;
+                    color: $white;
                 }
 
                 &:hover {
                     color: $white;
-                    background: $tertiary;
+                    background: $primary;
                 }
             }
         }
     }
-}
 
-
-/* visual Section Styles */
-.visual-section {
-    width: 100%;
-    overflow: hidden;
-    color: $white;
-    position: relative;
-    text-align: center;
-
-    &:before {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        content: '';
-        background: rgba(17,38,90,0.5);
-        z-index: 1;
-    }
-
-    .bg-image {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-
-        img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-            object-position: center;
-        }
-    }
-
-    .container {
-        padding-top: 82px;
-        padding-bottom: 50px;
-        position: relative;
-        z-index: 2;
-        min-height: 645px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        @media (max-width: $widescreen) {
-            padding-top: 50px;
-            min-height: 575px;
-        }
-
-        @media (max-width: $tablet) {
-            min-height: inherit;
-        }
-    }
-
-    .textbox {
-        width: 100%;
-        max-width: 950px;
-        font-size: 16px;
-        line-height: 1.2;
-
-        @media (max-width: $tablet) {
-            font-size: 14px;
-        }
-    }
-
-    h1 {
-        text-transform: uppercase;
-        font-size: 42px;
-        line-height: 1;
-        font-weight: 400;
-        margin: 0 0 78px;
-        letter-spacing: 3.4px;
-
-        @media (max-width: $widescreen) {
-            margin: 0 0 50px;
-        }
-
-        @media (max-width: $tablet) {
-            font-size: 32px;
-            letter-spacing: 2px;
-            margin: 0 0 30px;
-        }
-    }
-
-    p {
-        letter-spacing: 1.6px;
-        margin: 0 0 101px;
-
-        @media (max-width: $widescreen) {
-            margin: 0 0 65px;
-        }
-
-        @media (max-width: $tablet) {
-            margin: 0 0 30px;
-            letter-spacing: 1px;
-        }
-    }
-
-    .btn {
-        &.btn-white {
-            min-width: 208px;
-            font-size: 20px;
-            line-height: 26px;
-            padding: 15px 30px;
-            border-radius: 30px;
-            color: $white;
-            letter-spacing: 2px;
-            border: 2px solid $white;
-            background: rgba(255,255,255,0.2);
-
-            @media (max-width: $tablet) {
-                min-width: inherit;
-                padding: 10px 20px;
-                font-size: 16px;
-            }
-
-            &:hover {
-                color: $primary;
-                background: $white;
-            }
+    &.js-slide-hidden {
+        @media (min-width: $desktop + 1) {
+            left: -15px !important;
+            top: 100% !important;
         }
     }
 }

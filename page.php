@@ -17,7 +17,7 @@ global $option_fields;
 global $pID;
 global $fields;
 
-
+$hadaff_spbop_title = ( isset( $fields['hadaff_spbop_title'] ) ) ? $fields['hadaff_spbop_title'] : null;
 // $hdfall_pagetitle = (isset($fields['hdfall_pagetitle'])) ? $fields['hdfall_pagetitle'] : null;
 // if(!$hdfall_pagetitle){
 // 	$hdfall_pagetitle = get_the_title();
@@ -25,15 +25,26 @@ global $fields;
 $hdfall_pagetitle = glide_page_title('step_spbop_title');
 ?>
 <!-- Hero Start -->
-<!-- Page Title Block -->
-<section class="page-title-block">
-	<div class="container">
-		<h1><?php echo $hdfall_pagetitle; ?></h1>
-		<?php output_breadcrumbs(); ?>
-	</div>
-</section>
-
-
+<!-- Visual Block -->
+			<section class="visual-block sub-visual">
+				<div class="image-shape">
+					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/banner-shape-inner.png" alt="Admission Open 2023">
+				</div>
+				<div class="container">
+					<div class="textbox">
+						<div class="text-holder">
+							<?php if($hadaff_spbop_title) {?>
+							<h1><?php echo html_entity_decode($hadaff_spbop_title); ?></h1>
+							<?php } else {?>
+							<h1><?php the_title(); ?></h1>
+							<?php }?>
+							<ul class="breadcrumbs">
+								<?php my_breadcrumbs(); ?>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
 <!-- Hero End -->
 
 <section id="page-section" class="page-section">

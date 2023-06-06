@@ -1,5 +1,5 @@
 // media queries
-$phone: 575px;
+$phone: 479px;
 $tablet: 767px;
 $desktop: 1023px;
 $widescreen: 1199px;
@@ -8,24 +8,20 @@ $widescreen-xl: 1549px;
 $widescreen-xxl: 1699px;
 
 // colors
-$primary: #11265a;
-$secondary: #221c71;
-$tertiary: #df3B28;
-$blue-bright: #211f5b;
-$blue-lighter: #504da0;
-$blue-light: #2e2b70;
-$blue-darker: #0b0835;
+$primary: #2d2a6f;
+$primary-darker: #17154b;
+$secondary: #e23b29;
+$secondary-darker: #d4301f;
+$tertiary: #ff3b26;
+$blue-light: #211e5c;
+$blue-lighter: #262462;
+$blue-darker: #1f1c56;
 $blue-dark: #110c41;
-$gray-dark: #261f25;
 $gry-lightest: #f6f6f6;
-$gray-lighter: #999; 
-$gray-light: #75696d; 
+$gray-light: #f7f7f7;
 $text-color: $primary;
-$light-blue: #f7f9fe;
-$sky-blue: #edf0f8;
+$lt-gray: #999;
 
-
-$blue-darker: #2d2a6f;
 $blue-black: #151d30;
 $footer-text: #9098aa;
 

@@ -45,41 +45,34 @@ if ( $block['name'] ) {
 // Block variables
 
 $hdfall_iat_title        = $block_fields['hdfall_iat_title'];
+$hdfall_iat_kicker        = $block_fields['hdfall_iat_kicker'];
 $hdfall_iat_text         = html_entity_decode( $block_fields['hdfall_iat_text'] );
-$hdfall_iat_button       = $block_fields['hdfall_iat_button'];
-$hdfall_iat_img_location = $block_fields['hdfall_iat_img_location'];
 $hdfall_iat_image        = $block_fields['hdfall_iat_image'];
-
-
-if ( $hdfall_iat_img_location == 'left' ) {
-	$hdfall_iat_img_location = 'image-at-left';
-} else {
-	$hdfall_iat_img_location = 'image-at-right';
-}
-
+$hdfall_iat_bot_title        = $block_fields['hdfall_iat_bot_title'];
+$hdfall_iat_bot_subtitle        = $block_fields['hdfall_iat_bot_subtitle'];
 
 ?>
 <div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name . ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
 
-	<div class="iat-section two-columns justify-content-between align-items-center <?php echo $hdfall_iat_img_location; ?>">
-		<div class="iat-text column">
-			<?php if ( $hdfall_iat_title ) { ?>
-				<h2><?php echo $hdfall_iat_title; ?></h2>
-			<?php } ?>
-			<?php if ( $hdfall_iat_text ) { ?>
-				<?php echo $hdfall_iat_text; ?>
-			<?php } ?>
-			<?php if ( $hdfall_iat_button ) { ?>
-				<div class="iat-button">
-					<?php echo glide_acf_button( $hdfall_iat_button, 'button' ); ?>
+	<article class="chairman-block">
+				<div class="container">
+					<div class="image-holder">
+						<?php if ($hdfall_iat_image) { ?>
+							<img src="<?php echo $hdfall_iat_image; ?>" alt="<?php echo $hdfall_iat_title; ?>">
+						<?php } ?>
+					</div>
+					<div class="textbox">
+						<?php if ( $hdfall_iat_kicker ) { ?>
+							<span class="subtitle"><?php echo $hdfall_iat_kicker; ?></span>
+						<?php } ?>
+						<?php if ( $hdfall_iat_title ) { ?>
+							<h2><?php echo $hdfall_iat_title; ?></h2>
+						<?php } ?>
+						<?php if ( $hdfall_iat_text ) { ?>
+							<?php echo $hdfall_iat_text; ?>
+						<?php } ?>
+						<strong class="h3 name"><?php echo $hdfall_iat_bot_title ; ?>, <span><?php echo $hdfall_iat_bot_subtitle; ?></span></strong>
+					</div>
 				</div>
-			<?php } ?>
-		</div>
-		<?php if ( $hdfall_iat_image ) { ?>
-			<div class="iat-image column">
-				<img src="<?php echo wp_get_attachment_image_url( $hdfall_iat_image, 'full' ); ?>" alt="">
-			</div>
-		<?php } ?>
-	</div>
-
+			</article>
 </div>

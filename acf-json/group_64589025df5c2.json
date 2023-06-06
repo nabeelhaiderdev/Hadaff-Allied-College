@@ -1,13 +1,13 @@
 {
     "key": "group_64589025df5c2",
-    "title": "Block-home-banner",
+    "title": "Page Options - Home Banner",
     "fields": [
         {
-            "key": "field_64589026e767c",
-            "label": "Home Banner",
-            "name": "",
+            "key": "field_64589082e767d",
+            "label": "Title",
+            "name": "hadaff_hp_title",
             "aria-label": "",
-            "type": "message",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,14 +16,16 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "new_lines": "wpautop",
-            "esc_html": 0
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
-            "key": "field_64589082e767d",
-            "label": "Home Banner Title",
-            "name": "pgc_blk_home_banner_title",
+            "key": "field_647dc7972e433",
+            "label": "Sub Title",
+            "name": "hadaff_hp_sub_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -42,8 +44,8 @@
         },
         {
             "key": "field_645890cee767e",
-            "label": "Home Banner Description",
-            "name": "pgc_blk_home_banner_description",
+            "label": "Description",
+            "name": "hadaff_hp_description",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -62,10 +64,10 @@
         },
         {
             "key": "field_645890e5e767f",
-            "label": "Home Banner Button",
-            "name": "pgc_blk_home_banner_button",
+            "label": "Button",
+            "name": "hadaff_hp_button",
             "aria-label": "",
-            "type": "url",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -74,33 +76,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_645890ffe7680",
-            "label": "Home Banner Image",
-            "name": "pgc_blk_home_banner_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
+            "return_format": "array"
         }
     ],
     "location": [
@@ -121,5 +97,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683546261
+    "modified": 1685965733
 }

@@ -1,11 +1,11 @@
 {
     "key": "group_6458e3a810266",
-    "title": "Single Page - Banner Options",
+    "title": "Single Page Options - Default",
     "fields": [
         {
             "key": "field_6458e3a886cb4",
             "label": "Title",
-            "name": "step_spbop_title",
+            "name": "hadaff_spbop_title",
             "aria-label": "",
             "type": "text",
             "instructions": "This will replace the page title if given. Else page title will be displayed.",
@@ -41,5 +41,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683547298
+    "modified": 1685963579
 }

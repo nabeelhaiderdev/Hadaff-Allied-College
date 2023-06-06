@@ -24,10 +24,10 @@ global $fields;
 // print_r($fields);
 // echo '</pre>';
 
-$pgc_blk_home_banner_title = ( isset( $fields['pgc_blk_home_banner_title'] ) ) ? $fields['pgc_blk_home_banner_title'] : null;
-$pgc_blk_home_banner_description = ( isset( $fields['pgc_blk_home_banner_description'] ) ) ? $fields['pgc_blk_home_banner_description'] : null;
-$pgc_blk_home_banner_button = ( isset( $fields['pgc_blk_home_banner_button'] ) ) ? $fields['pgc_blk_home_banner_button'] : null;
-$pgc_blk_home_banner_image = ( isset( $fields['pgc_blk_home_banner_image'] ) ) ? $fields['pgc_blk_home_banner_image'] : null;
+$hadaff_hp_title = ( isset( $fields['hadaff_hp_title'] ) ) ? $fields['hadaff_hp_title'] : null;
+$hadaff_hp_sub_title = ( isset( $fields['hadaff_hp_sub_title'] ) ) ? $fields['hadaff_hp_sub_title'] : null;
+$hadaff_hp_description = ( isset( $fields['hadaff_hp_description'] ) ) ? $fields['hadaff_hp_description'] : null;
+$hadaff_hp_button = ( isset( $fields['hadaff_hp_button'] ) ) ? $fields['hadaff_hp_button'] : null;
 
 
 
@@ -45,15 +45,34 @@ $pgc_blk_home_banner_image = ( isset( $fields['pgc_blk_home_banner_image'] ) ) ?
 </section> -->
 <!-- Hero End -->
 <!-- Visual Section -->
-<section class="visual-section">
-				<div class="bg-image"><img src="<?php echo $pgc_blk_home_banner_image; ?>" alt="A Legacy of Excellence"></div>
+<section class="visual-block">
+				<div class="image-shape">
+					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/banner-shape.png" alt="Admission Open 2023">
+				</div>
 				<div class="container">
 					<div class="textbox">
-						<h1><?php echo $pgc_blk_home_banner_title; ?></h1>
-						<p><?php echo html_entity_decode($pgc_blk_home_banner_description); ?></p>
-						<a href="<?php echo $pgc_blk_home_banner_button; ?>" class="btn btn-lg btn-white">Learn More</a>
+						<div class="text-holder">
+							<h1><?php echo html_entity_decode($hadaff_hp_title); ?></h1>
+							<p><?php echo $hadaff_hp_sub_title; ?></p>
+							<div class="degree-info">
+							<?php echo  html_entity_decode($hadaff_hp_description); ?>	
+						</div>
+							<?php
+								if( $hadaff_hp_button ) :
+									echo glide_acf_button( $hadaff_hp_button, 'btn btn-secondary' );
+								endif;
+							?>
+						</div>
 					</div>
-				</div>
+					<div class="image-holder">
+						<div class="image-wrap">
+							<?php if (has_post_thumbnail()) {
+								the_post_thumbnail('full');
+							} else { ?>
+							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/image-visual.png" alt="Admission Open 2023">
+							<?php }?>
+						</div>
+					</div>
 			</section>
 <section id="page-section" class="page-section">
 	<!-- Content Start --> <?php while ( have_posts() ) { the_post();
