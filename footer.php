@@ -77,7 +77,7 @@ $pgc_to_ftr_copyright = ( isset( $option_fields['pgc_to_ftr_copyright'] ) ) ? $o
 		<div class="pri-footer">
 			<div class="container">
 				<strong class="logo">
-					<a href="#"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo.png"
+					<a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo.png"
 							width="206" height="107" alt="Hadaf Colleges of Allied Health Sciences"></a>
 				</strong>
 				<ul class="additional-info">
