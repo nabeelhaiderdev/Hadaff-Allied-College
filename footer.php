@@ -60,14 +60,16 @@ if ( $hdfall_schema_check ) {
 // $hdfall_ftrop_title     = ( isset( $option_fields['hdfall_ftrop_title'] ) ) ? $option_fields['hdfall_ftrop_title'] : null;
 // $hdfall_ftrop_text      = isset($option_fields['hdfall_ftrop_text']) ? html_entity_decode( $option_fields['hdfall_ftrop_text'] ):null;
 // $hdfall_ftrop_copyright = isset($option_fields['hdfall_ftrop_copyright']) ? html_entity_decode( $option_fields['hdfall_ftrop_copyright'] ):null;
-$pgc_social_fb       = ( isset( $option_fields['pgc_social_fb'] ) ) ? $option_fields['pgc_social_fb'] : null;
-$pgc_social_li       = ( isset( $option_fields['pgc_social_li'] ) ) ? $option_fields['pgc_social_li'] : null;
+$hadaff_social_fb       = ( isset( $option_fields['hadaff_social_fb'] ) ) ? $option_fields['hadaff_social_fb'] : null;
+$hadaff_social_tw       = ( isset( $option_fields['hadaff_social_tw'] ) ) ? $option_fields['hadaff_social_tw'] : null;
+$hadaff_social_yt       = ( isset( $option_fields['hadaff_social_yt'] ) ) ? $option_fields['hadaff_social_yt'] : null;
+$hadaff_social_in       = ( isset( $option_fields['hadaff_social_in'] ) ) ? $option_fields['hadaff_social_in'] : null;
+$hadaff_social_wa       = ( isset( $option_fields['hadaff_social_wa'] ) ) ? $option_fields['hadaff_social_wa'] : null;
 
 $pgc_to_ftr_title = ( isset( $option_fields['pgc_to_ftr_title'] ) ) ? $option_fields['pgc_to_ftr_title'] : null;
-$pgc_to_ftr_contact = ( isset( $option_fields['pgc_to_ftr_contact'] ) ) ? $option_fields['pgc_to_ftr_contact'] : null;
-$pgc_to_ftr_address = ( isset( $option_fields['pgc_to_ftr_address'] ) ) ? $option_fields['pgc_to_ftr_address'] : null;
-$pgc_to_ftr_copyright = ( isset( $option_fields['pgc_to_ftr_copyright'] ) ) ? $option_fields['pgc_to_ftr_copyright'] : null;
-
+$hadaff_to_ftr_contact = ( isset( $option_fields['hadaff_to_ftr_contact'] ) ) ? $option_fields['hadaff_to_ftr_contact'] : null;
+$hadaff_to_ftr_address = ( isset( $option_fields['hadaff_to_ftr_address'] ) ) ? $option_fields['hadaff_to_ftr_address'] : null;
+$hadaff_to_ftr_copyright = ( isset( $option_fields['hadaff_to_ftr_copyright'] ) ) ? $option_fields['hadaff_to_ftr_copyright'] : null;
 ?>
 <?php get_template_part( 'partials/cta' ); ?> </main>
 <footer id="footer-section" class="footer-section footer">
@@ -77,55 +79,68 @@ $pgc_to_ftr_copyright = ( isset( $option_fields['pgc_to_ftr_copyright'] ) ) ? $o
 		<div class="pri-footer">
 			<div class="container">
 				<strong class="logo">
-					<a href="#"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo.png"
+					<a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo.png"
 							width="206" height="107" alt="Hadaf Colleges of Allied Health Sciences"></a>
 				</strong>
+				<?php if ($hadaff_to_ftr_contact) { ?>
 				<ul class="additional-info">
+					<?php foreach ($hadaff_to_ftr_contact as $con_detail) {
+						if ($con_detail['type']==='email'){ ?>
 					<li>
-						<strong class="title">Email</strong>
-						<a href="mailto:info@hadaf.edu.pk" class="text">info@hadaf.edu.pk</a>
+						<strong class="title"><?php echo $con_detail['title']; ?></strong>
+						<a href="mailto:<?php echo $con_detail['value']; ?>" class="text"><?php echo $con_detail['value']; ?></a>
 					</li>
+					<?php } elseif ($con_detail['type']==='phone') {?>
 					<li>
-						<strong class="title">Contact Us</strong>
-						<span class="text"><a class="text" href="tel:03101185910">03101185910</a></span>
+						<strong class="title"><?php echo $con_detail['title']; ?></strong>
+						<span class="text"><a class="text" href="tel:<?php echo $con_detail['value']; ?>"><?php echo $con_detail['value']; ?></a></span>
 					</li>
+					<?php } else {?>
+						<li>
+						<strong class="title"><?php echo $con_detail['title']; ?></strong>
+						<p class="text"><?php echo $con_detail['value']; ?></p>
+					</li>
+					<?php }} ?>
 				</ul>
+				<?php } ?>
 			</div>
 		</div>
 		<div class="sec-footer">
 			<div class="container">
 				<div class="theme-info">
 					<div class="textbox">
+						<?php if($hadaff_to_ftr_address)?>
 						<strong class="title">Address</strong>
-						<p>Hayatabad Ring Road, Achini Chowk, Peshawar.</p>
+						<p><?php echo $hadaff_to_ftr_address; ?></p>
 					</div>
 					<ul class="social-networks">
-						<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
-						<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-						<li><a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+						<li><a href="<?php echo $hadaff_social_fb; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="<?php echo $hadaff_social_tw; ?>" target="_blank"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="<?php echo $hadaff_social_yt; ?>" target="_blank"><i class="fab fa-youtube"></i></a></li>
+						<li><a href="<?php echo $hadaff_social_in; ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+						<li><a href="<?php echo $hadaff_social_wa; ?>" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
 					</ul>
 				</div>
 				<div class="columns-holder">
 					<div class="social-column">
 						<strong class="title">Social Media</strong>
 						<ul class="social-links">
-							<li><a href="#" target="_blank">Facebook</a></li>
-							<li><a href="#" target="_blank">Instagram</a></li>
-							<li><a href="#" target="_blank">Twitter</a></li>
-							<li><a href="#" target="_blank">Youtube</a></li>
+							<li><a href="<?php echo $hadaff_social_fb; ?>" target="_blank">Facebook</a></li>
+							<li><a href="<?php echo $hadaff_social_in; ?>" target="_blank">Instagram</a></li>
+							<li><a href="<?php echo $hadaff_social_tw; ?>" target="_blank">Twitter</a></li>
+							<li><a href="<?php echo $hadaff_social_yt; ?>" target="_blank">Youtube</a></li>
 						</ul>
 					</div>
 					<div class="usefull-links">
 						<strong class="title">Useful Links</strong>
 						<div class="links-wrap">
-							<ul>
-								<li><a href="vision-mission.html">Vision & Mission</a></li>
-								<li><a href="chairman-message.html">Chairman Message</a></li>
-								<li><a href="#">Programmes</a></li>
-								<li><a href="contact.html">Contact Us</a></li>
-							</ul>
+							<?php 
+								wp_nav_menu( array(
+								'theme_location' => 'footer-nav-one',
+								'menu_class' => '',
+								'container' => false
+								) );
+							?>
 						</div>
 					</div>
 				</div>
@@ -133,7 +148,7 @@ $pgc_to_ftr_copyright = ( isset( $option_fields['pgc_to_ftr_copyright'] ) ) ? $o
 		</div>
 		<div class="footer-copyrights">
 			<div class="container">
-				<p>© Copyright 2023 Hadaf Colleges - All right reserved.</p>
+				<p><?php echo $hadaff_to_ftr_copyright; ?></p>
 			</div>
 		</div>
 	</footer>

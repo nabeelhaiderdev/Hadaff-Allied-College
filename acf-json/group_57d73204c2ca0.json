@@ -111,7 +111,7 @@
         {
             "key": "field_62669b7be5b29",
             "label": "Contact Options",
-            "name": "pgc_to_ftr_contact",
+            "name": "hadaff_to_ftr_contact",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -202,7 +202,7 @@
         {
             "key": "field_6454e2547c71a",
             "label": "Address",
-            "name": "pgc_to_ftr_address",
+            "name": "hadaff_to_ftr_address",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -222,7 +222,7 @@
         {
             "key": "field_62683b44efa45",
             "label": "Copyright",
-            "name": "pgc_to_ftr_copyright",
+            "name": "hadaff_to_ftr_copyright",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -298,8 +298,8 @@
         },
         {
             "key": "field_5efdbf23d7e60",
-            "label": "LinkedIn",
-            "name": "pgc_social_li",
+            "label": "YouTube",
+            "name": "hadaff_social_yt",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -319,7 +319,27 @@
         {
             "key": "field_5fbe5285de720",
             "label": "Instagram",
-            "name": "pgc_social_in",
+            "name": "hadaff_social_in",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64801ba7ce1fc",
+            "label": "WhatsApp",
+            "name": "hadaff_social_wa",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -1097,5 +1117,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683284672
+    "modified": 1686202883
 }
