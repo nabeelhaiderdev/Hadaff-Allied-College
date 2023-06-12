@@ -80,6 +80,6 @@ $hadaff_hp_button = ( isset( $fields['hadaff_hp_button'] ) ) ? $fields['hadaff_h
 		get_template_part( 'partials/content', 'page' );
 
 	} ?> <div class="clear"></div>
-	<div class="ts-80"></div>
+	<div class="ts-80" style="height:93px"></div>
 	<!-- Content End -->
 </section> <?php get_footer(); ?>

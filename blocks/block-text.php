@@ -48,11 +48,19 @@ $hadaff_blk_txt_title        = $block_fields['hadaff_blk_txt_title'];
 $hadaff_blk_txt_subtitle = ( isset( $block_fields['hadaff_blk_txt_subtitle'] ) ) ? $block_fields['hadaff_blk_txt_subtitle'] : null;
 $hadaff_blk_txt_text         = html_entity_decode( $block_fields['hadaff_blk_txt_text'] );
 $hadaff_blk_txt_select_design        = $block_fields['hadaff_blk_txt_select_design'];
+$hadaff_blk_rb_top_bodder = ( isset( $block_fields['hadaff_blk_rb_top_bodder'] ) ) ? $block_fields['hadaff_blk_rb_top_bodder'] : null;
+
+
+
+if($hadaff_blk_rb_top_bodder == 'yes')
+	$top_header = 'affiliation-block';
+else 
+	$top_header = '';
 
 ?>
-<div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name . ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
+<div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name . ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?> ">
 <?php if($hadaff_blk_txt_select_design == "center") {?>
-	<article class="intro-block">``
+	<article class="intro-block">
 				<div class="container">
 					<div class="head">
 						<?php if ( $hadaff_blk_txt_title ) { ?>
@@ -73,7 +81,7 @@ $hadaff_blk_txt_select_design        = $block_fields['hadaff_blk_txt_select_desi
 			</article>
 <?php } else {?>
 	<div class="container">
-		<div class="text-block">
+		<div class="text-block <?php echo $top_header; ?>">
 			<?php if ( $hadaff_blk_txt_title ) { ?>
 								<h2><?php echo $hadaff_blk_txt_title; ?></h2>
 							<?php } ?>

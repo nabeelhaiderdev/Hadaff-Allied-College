@@ -85,6 +85,39 @@
             "placeholder": ""
         },
         {
+            "key": "field_6486b2f13aff4",
+            "label": "Top Bodder",
+            "name": "hadaff_blk_rb_top_bodder",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_647ebc2dd82d2",
+                        "operator": "==",
+                        "value": "left"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "no": "No",
+                "yes": "Yes"
+            },
+            "default_value": "No",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_647ebc69d82d3",
             "label": "Sub Titile",
             "name": "hadaff_blk_txt_subtitle",
@@ -152,5 +185,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686028955
+    "modified": 1686554788
 }

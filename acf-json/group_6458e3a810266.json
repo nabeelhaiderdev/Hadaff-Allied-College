@@ -8,7 +8,7 @@
             "name": "hadaff_spbop_title",
             "aria-label": "",
             "type": "text",
-            "instructions": "This will replace the page title if given. Else page title will be displayed.",
+            "instructions": "This will replace the page title if given. Else page title will be displayed.\r\nUse <span> for red colour",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -41,5 +41,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685963579
+    "modified": 1686204715
 }

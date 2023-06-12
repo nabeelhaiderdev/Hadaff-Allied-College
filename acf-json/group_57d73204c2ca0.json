@@ -20,45 +20,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_627944609e9f4",
-            "label": "Top bar",
-            "name": "hdfall_tohdr_tbar",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5ed4cfcc4548c",
             "label": "Button",
             "name": "hdfall_tohdr_btn",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
-        },
-        {
-            "key": "field_62685c755920a",
-            "label": "Button Two",
-            "name": "hdfall_tohdr_btn_two",
             "aria-label": "",
             "type": "link",
             "instructions": "",
@@ -1117,5 +1081,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686202883
+    "modified": 1686209635
 }

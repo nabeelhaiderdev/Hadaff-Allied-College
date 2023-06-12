@@ -111,7 +111,7 @@ $hdfall_blk_cu_map = (isset($block_fields['hdfall_blk_cu_map'])) ? $block_fields
 			</div>
 			<div class="map-block">
 				<!-- https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.8598364912164!2d71.47798757629516!3d33.97044192204411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d9176421320319%3A0x6b6e78173d0e44ab!2sHadaf%20Colleges!5e0!3m2!1sen!2s!4v1685686083349!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade -->
-				<iframe src="<?php if($hdfall_blk_cu_map){echo $hdfall_blk_cu_map;}?>"></iframe>
+				<?php if($hdfall_blk_cu_map){echo html_entity_decode($hdfall_blk_cu_map);}?>">
 			</div>
 		</div>
 	</section>

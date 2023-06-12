@@ -34,8 +34,6 @@ $hscripts = ( isset( $option_fields['head_scripts'] ) ) ? $option_fields['head_s
 $bscripts = ( isset( $option_fields['body_scripts'] ) ) ? $option_fields['body_scripts'] : null;
 
 $hdfall_tohdr_btn     = isset($option_fields['hdfall_tohdr_btn']) ? $option_fields['hdfall_tohdr_btn']:null;
-$hdfall_tohdr_btn_two = isset($option_fields['hdfall_tohdr_btn_two']) ? $option_fields['hdfall_tohdr_btn_two']:null;
-$hdfall_tohdr_tbar    = isset($option_fields['hdfall_tohdr_tbar']) ? $option_fields['hdfall_tohdr_tbar']:null;
 // Page variables - Advanced custom fields variables
 ?>
 <!DOCTYPE html>
@@ -112,41 +110,30 @@ if ( $bscripts != '' ) {
 		<!-- Header of the page -->
 		<header class="header">
 			<div class="container">
-				<strong class="logo"><a href="index.html"><img
+				<strong class="logo"><a href="<?php echo home_url(); ?>"><img
 							src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo.png"
 							width="174" height="92" alt="Hadaf Colleges of Allied Health Sciences"></a></strong>
 				<div class="header-holder">
 					<div class="header-navigation">
-						<ul class="navigation">
-							<li><a href="index.html">Home</a></li>
-							<li class="has-dropdown">
-								<a href="about.html">About</a>
-								<i class="fas fa-chevron-down drop-opener"></i>
-								<div class="nav-dropdown">
-									<ul>
-										<li><a href="chairman-message.html">Chairman Message</a></li>
-										<li><a href="vision-mission.html">Vision Mission</a></li>
-									</ul>
-								</div>
-							</li>
-							<li class="has-dropdown">
-								<a href="#">Programmes</a>
-								<i class="fas fa-chevron-down drop-opener"></i>
-								<div class="nav-dropdown">
-									<ul>
-										<li><a href="bs-anesthesia.html">BS Anesthesia</a></li>
-										<li><a href="bs-cardiology.html">BS Cardiology</a></li>
-										<li><a href="bs-health.html">BS Health</a></li>
-										<li><a href="bs-radiology.html">BS Radiology</a></li>
-										<li><a href="bs-surgical.html">BS Surgical</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="contact.html">Contact Us</a></li>
-						</ul>
+						<?php
+							    // hadaff_header_navigation();
+							wp_nav_menu(
+								array(
+								'menu_class' => 'navigation',
+								'theme_location' => 'header-nav',
+								'fallback_cb' => 'menu_fallback',
+								'container'			=> 'div',
+								'container_class'	=> 'header-navigation',
+								)
+						);
+						?>
 					</div>
 				</div>
-				<a href="#" class="btn btn-secondary">Apply Now</a>
+				<?php
+					if( $hdfall_tohdr_btn ) :
+						echo glide_acf_button( $hdfall_tohdr_btn, 'btn btn-secondary' );
+					endif;
+				?>
 				<a href="#" class="nav-opener"><span></span></a>
 			</div>
 		</header>
